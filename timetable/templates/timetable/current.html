@@ -1,0 +1,177 @@
+<h1>This is Current timetable</h1>
+<br>
+<br>
+<style>
+table, th, td {
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+th, td {
+		padding: 5px;
+}
+</style>
+<table style="width:60%">
+	<tr>
+		<th><h2><font color="Red">TIME/<br>DAY</font></h2></th>
+		<th>8-9</th>
+		<th>9-10</th>
+		<th>10-11</th>
+		<th>11-12</th>
+		<th>12-1</th>
+		<th>1-2</th>
+		<th>2-3</th>
+		<th>3-4</th>
+		<th>4-5</th>
+	</tr>
+	<tr>
+		<th>MONDAY</th>
+		{% for indiv_slot in all_slots %}
+
+			{% if indiv_slot.day == "MONDAY" %}
+			<!-- HOW TO REMOVE HARDCODE HERE -->
+			<form action= "addevent/{{ indiv_slot.id }}" method="POST">
+			{% csrf_token %}	
+						<td >	
+						{% if indiv_slot.is_free %}
+						<input type='radio' id="indiv_slot{{ forloop.counter }}" name='indiv_slot' value="{{ indiv_slot.id }}"/>
+							<label for="indiv_slot{{ forloop.counter }}">
+								FREE
+							</label>
+							<input type="submit" value="ADD EVENT"/>
+						{% else %}
+							{{ indiv_slot.event_set.all.0 }}
+						</td>
+						{% endif %}
+
+			</form>	
+			{% endif %}		
+		{% endfor %}
+
+	</tr>	
+	<tr>	
+		<th>TUESDAY</th>
+		{% for indiv_slot in all_slots %}
+
+			{% if indiv_slot.day == "TUESDAY" %}
+			<!-- HOW TO REMOVE HARDCODE  URL 	HERE -->
+			<form action= "addevent/{{ indiv_slot.id }}" method="POST">
+			{% csrf_token %}	
+						<td>	
+						
+						{% if indiv_slot.is_free %}
+						<input type='radio' id="indiv_slot{{ forloop.counter }}" name='indiv_slot' value="{{ indiv_slot.id }}"/>
+							<label for="indiv_slot{{ forloop.counter }}">
+								FREE
+							</label>
+							<input type="submit" value="ADD EVENT"/>
+						{% else %}
+							{{ indiv_slot.event_set.all.0 }}
+						</td>
+						{% endif %}
+
+			</form>	
+			{% endif %}		
+		{% endfor %}
+	</tr>
+	<tr>	
+		<th>WEDNESDAY</th>
+		{% for indiv_slot in all_slots %}
+
+			{% if indiv_slot.day == "WEDNESDAY" %}
+			<!-- HOW TO REMOVE HARDCODE HERE -->
+			<form action= "addevent/{{ indiv_slot.id }}" method="POST">
+			{% csrf_token %}	
+						<td>	
+						
+						{% if indiv_slot.is_free %}
+						<input type='radio' id="indiv_slot{{ forloop.counter }}" name='indiv_slot' value="{{ indiv_slot.id }}"/>
+							<label for="indiv_slot{{ forloop.counter }}">
+								FREE
+							</label>
+							<input type="submit" value="ADD EVENT"/>
+						{% else %}
+							{{ indiv_slot.event_set.all.0 }}
+						</td>
+						{% endif %}
+
+			</form>	
+			{% endif %}		
+		{% endfor %}
+	</tr>
+	<tr>	
+		<th>THURSDAY</th>
+		{% for indiv_slot in all_slots %}
+
+			{% if indiv_slot.day == "THURSDAY" %}
+			<!-- HOW TO REMOVE HARDCODE HERE -->
+			<form action= "addevent/{{ indiv_slot.id }}" method="POST">
+			{% csrf_token %}	
+						<td>	
+						
+						{% if indiv_slot.is_free %}
+						<input type='radio' id="indiv_slot{{ forloop.counter }}" name='indiv_slot' value="{{ indiv_slot.id }}"/>
+							<label for="indiv_slot{{ forloop.counter }}">
+								FREE
+							</label>
+							<input type="submit" value="ADD EVENT"/>
+						{% else %}
+							{{ indiv_slot.event_set.all.0 }}
+						</td>
+						{% endif %}
+
+			</form>	
+			{% endif %}		
+		{% endfor %}
+	</tr>
+	<tr>
+		<th>FRIDAY</th>
+		{% for indiv_slot in all_slots %}
+
+			{% if indiv_slot.day == "FRIDAY" %}
+			<!-- HOW TO REMOVE HARDCODE HERE -->
+			<form action= "addevent/{{ indiv_slot.id }}" method="POST">
+			{% csrf_token %}	
+						<td>	
+						
+						{% if indiv_slot.is_free %}
+						<input type='radio' id="indiv_slot{{ forloop.counter }}" name='indiv_slot' value="{{ indiv_slot.id }}"/>
+							<label for="indiv_slot{{ forloop.counter }}">
+								FREE
+							</label>
+							<input type="submit" value="ADD EVENT"/>
+						{% else %}
+							{{ indiv_slot.event_set.all.0 }}
+						</td>
+						{% endif %}
+
+			</form>	
+			{% endif %}		
+		{% endfor %}
+	</tr>
+	<tr>
+		<th>SATURDAY</th>
+		{% for indiv_slot in all_slots %}
+
+			{% if indiv_slot.day == "SATURDAY" %}
+			<!-- HOW TO REMOVE HARDCODE HERE -->
+			<form action= "addevent/{{ indiv_slot.id }}" method="POST">
+			{% csrf_token %}	
+						<td>	
+						
+						{% if indiv_slot.is_free %}
+						<input type='radio' id="indiv_slot{{ forloop.counter }}" name='indiv_slot' value="{{ indiv_slot.id }}"/>
+							<label for="indiv_slot{{ forloop.counter }}">
+								FREE
+							</label>
+							<input type="submit" value="ADD EVENT"/>
+						{% else %}
+							{{ indiv_slot.event_set.all.0 }}
+						</td>
+						{% endif %}
+
+			</form>	
+			{% endif %}		
+		{% endfor %}
+	</tr>
+
+</table>

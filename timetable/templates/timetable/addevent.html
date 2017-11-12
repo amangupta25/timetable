@@ -1,0 +1,26 @@
+<h1>ADD EVENT</h1>
+<h3>{{ selected_slot }}</h3>
+
+
+<form action="/timetable/addevent/{{ selected_slot.id }}/thanks" method="POST">
+
+{% csrf_token %}
+
+<p>
+	<label for="(( selected_slot.id }}"> EVENT NAME: </label>
+	
+		<input type="text" name='ename' id="(( selected_slot.id }}" value="{{ selected_event.ename }}" />
+		<br><br>
+	<label for="(( selected_slot.id }}"> VENUE: </label>	
+		<input type="text" name='venue' id="(( selected_slot.id }}" value="{{ selected_event.venue }}" />
+		<br><br>
+
+	<label for="(( selected_slot.id }}"> CODE: </label>
+		<input type="number" name='code' id="(( selected_slot.id }}" value="{{ selected_event.code }}" />
+
+		<br><br>
+	<input type="submit" value="SUBMIT"/>
+
+</p>
+</form>
+
